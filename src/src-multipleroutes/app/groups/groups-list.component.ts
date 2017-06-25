@@ -8,16 +8,23 @@ import { GroupsList, GroupsListService } from './groups-list.service';
 
 @Component({
     template: `
-    <ul class="items">
-        <li *ngFor="let group of groupsList | async"
-            (click)="onGroupSelect(group)"
-            [class.selected]="isGroupSelected(group)">
-            <span class="id">{{group.id}}</span>
-            {{group.name}}
-        </li>
-    </ul>
-
-    <router-outlet></router-outlet>
+    <table>
+        <tr>
+            <td>
+                <ul class="items">
+                    <li *ngFor="let group of groupsList | async"
+                      (click)="onGroupSelect(group)"
+                       [class.selected]="isGroupSelected(group)">
+                        <span class="id">{{group.id}}</span>
+                         {{group.name}}
+                    </li>
+                </ul>
+            </td>
+            <td>
+                <router-outlet></router-outlet>
+            </td>
+        </tr>
+    </table>
     `
 })
 export class GroupsListComponent implements OnInit { 
