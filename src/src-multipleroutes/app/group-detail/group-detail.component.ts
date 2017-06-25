@@ -29,7 +29,6 @@ export class GroupDetailComponent implements OnInit {
     ngOnInit() {
         this.groupDetail = this.route.params.switchMap(
             (params: Params) => {
-                console.log(params['id']);
                 return this.service.getGroupDetail(params['id']);
             }
         )

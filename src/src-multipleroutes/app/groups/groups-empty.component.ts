@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
     template: `
-    <p>Empty</p>
+    <p>Click Group Button</p>
     `
 })
 export class GroupsEmptyComponent { }

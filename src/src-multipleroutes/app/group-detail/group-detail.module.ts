@@ -9,11 +9,10 @@ import { GroupDetailService } from './group-detail.service'
 
 const groupDetailRoute: Routes = [
     {
-        path: ':id',
-        component: GroupDetailService
-    }
+        path: '',
+        component: GroupDetailComponent
+    },
 ]
-
 
 @NgModule({
     imports: [
@@ -29,5 +28,4 @@ const groupDetailRoute: Routes = [
     ],
 })
 export class GroupDetailModule {
-
 }

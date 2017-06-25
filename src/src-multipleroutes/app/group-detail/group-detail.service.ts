@@ -15,6 +15,7 @@ export class GroupDetailService {
     private GroupDetailPromise: Promise<GroupDetail[]>[];
 
     constructor() {
+        this.GroupDetailPromise = new Array();
         GROUPDETAIL.forEach((group: GroupDetail[], index: number) => {
             this.GroupDetailPromise[index] = Promise.resolve(group); 
         });

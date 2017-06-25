@@ -8,6 +8,11 @@ const appRoutes: Routes = [
         pathMatch: 'full'   
     },
     {
+        path: '.html',
+        redirectTo: 'groups',
+        pathMatch: 'full'
+    },
+    {
         path: 'groups',
         // How to 'Path base setting' ??? 
         loadChildren: 'src-multipleroutes/app/groups/groups.module#GroupsModule'
