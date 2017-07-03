@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 import { GroupService } from '../data/group.service';
 
@@ -23,6 +23,17 @@ export class GroupDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.route.params.subscribe(
+	  (params: Params) => {
+	    let groupPath = params['group'];
+        if (groupPath == "__first__") {
+          groupPath = this.groupService.getFirstGroup().path;
+        }
+        this.members = this.groupService.getGroup(groupPath).members;
+	  });
+  }
+  
+  ngOnInit_orig() {
     this.route.parent.url
       .subscribe(urlSegments => {
         let groupPath = urlSegments[0].path;
