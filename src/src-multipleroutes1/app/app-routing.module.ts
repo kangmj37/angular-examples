@@ -13,7 +13,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'group',
-	loadChildren: 'src-multipleroutes0/app/groups/group-list.module#GroupListModule'
+    loadChildren: 'src-multipleroutes1/app/groups/groups.module#GroupsModule'
   },
   {
     path: 'subject',
