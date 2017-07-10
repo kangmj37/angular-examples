@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     template: `
     <span>
     <table class='palette-table'>
         <tr>
-            <td><input (change)=onChange($event) value={{editColor}}/></td>
+            <td><input type="text" (change)=onChange($event) value='color'/></td>
         </tr>
         <tr>
             <td [style.background-color]="color"></td>
@@ -26,14 +26,17 @@ export class PaletteItemComponent implements OnInit {
     private color: string;
     private editColor: string;
     
-    constructor(private route:ActivatedRoute) {
-        this.editColor = 'color'
+    constructor(private route:ActivatedRoute, private router:Router) {
     }
 
-    onChange(event) {}
+    onChange(event: KeyboardEvent) {
+		let inputColor = (<HTMLInputElement>event.target).value;
+		let outletName = this.route.outlet;
+		this.router.navigate([{outlets: {[outletName]:[inputColor]}}]);
+    }
 
     ngOnInit() {
-        console.log('palette item component Init.');    // second outlet component new... 
+        console.log('palette item component Init.');    // component new oer secondary outlet... 
         this.route.params.subscribe(params =>{
             this.color = params['color'];
         });
