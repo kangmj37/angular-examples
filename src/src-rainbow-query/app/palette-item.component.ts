@@ -1,9 +1,14 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+import { ActivatedRoute } from '@angular/router';
+
+import 'rxjs/add/operator/map';
+
 @Component({
-    selector: 'palette-item',
+    selector: 'palette-item-component',
+    // <input [ngModel]="color" (change)="onChange($event)" placeholder="color"/>
     template: `
-        <input [ngModel]="color" (change)="onChange($event)" placeholder="color"/>
+        <input [value]="color" (change)="onChange($event)" placeholder="color"/>
         <div [style.background]="color"></div>
     `,
     styles: [`
@@ -21,7 +26,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class PaletteItemComponent {
     _color:string = 'black'
 
-    constructor() {
+    constructor(private route: ActivatedRoute) {
         console.log(`${this.constructor.name}::new`);
     }
 
@@ -29,7 +34,7 @@ export class PaletteItemComponent {
         return this._color;
     }
     @Input() set color(value:string) {
-        console.log(`${this.constructor.name}::color binded property set`);
+        console.log(`${this.constructor.name}::color binded property set: ${value}`);
         this._color = value;
         if (this._color != value) {
             console.log(`* ${this._color} -> ${value}`);
