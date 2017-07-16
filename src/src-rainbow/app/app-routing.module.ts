@@ -5,42 +5,6 @@ import { PaletteItemComponent } from './palette-item.component';
 
 const routes: Routes = [
   {
-<<<<<<< HEAD
-    path: ':color',
-    // asterisk  impossible ?
-    outlet: 'ro1',
-    component: PaletteItemComponent
-  },
-  {
-    path: ':color',
-    outlet: 'ro2',
-    component: PaletteItemComponent
-  },
-  {
-    path: ':color',
-    outlet: 'ro3',
-    component: PaletteItemComponent
-  },
-  {
-    path: ':color',
-    outlet: 'ro4',
-    component: PaletteItemComponent
-  },
-  {
-    path: ':color',
-    outlet: 'ro5',
-    component: PaletteItemComponent
-  },
-  {
-    path: ':color',
-    outlet: 'ro6',
-    component: PaletteItemComponent
-  },
-  {
-    path: ':color',
-    outlet: 'ro7',
-    component: PaletteItemComponent
-=======
     path: ':background',
     component: PaletteItemComponent,
     outlet: 'p1'
@@ -74,7 +38,6 @@ const routes: Routes = [
     path: ':background',
     component: PaletteItemComponent,
     outlet: 'p7'
->>>>>>> d6cbf9957cd0649003f8a1c0503cf68db04d7537
   },
 ];
 
