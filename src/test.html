@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    function fill() {
+        var ex_div_ele = document.currentScript.parentElement;
+		var style_ele = ex_div_ele.previousElementSibling;
+		var style = style_ele.sheet;
+
+		var str = 'ABC 123 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 \\A God blessed the East Sea and Mt.';
+		var selector = '.' + ex_div_ele.className + '::after';
+		var propStr = 'content: \'' + str + '\';\nwhite-space: pre;\n';
+	
+		console.log(style_ele.innerText);
+		style.insertRule(selector + ' {' + propStr + '}', style.cssRules.length)
+    }
+    </script>
+</head>
+
+<body>
+    <style>
+    .ex-1 { font-family: 'Times New Roman', Times, serif; }
+    </style>
+    <div class="ex-1"><script>fill()</script></div>
+
+    <style>
+    .ex-2 { font-family: NanumSquare, Dotum, "돋움", Helvetica, AppleSDGothicNeo, sans-serif; }
+    </style>
+    <div class="ex-2"><script>fill()</script></div>
+
+    <style>
+    .ex-3 { font-family: "Courier New", Courier, monospace; }
+    </style>
+    <div class="ex-3"><script>fill()</script></div>
+
+    <style>
+    .ex-4 { font-family: "Courier New", AppleMyungjo, Courier, monospace; }
+    </style>
+    <div class="ex-4"><script>fill()</script></div>
+
+    <style>
+    .ex-5 { font-family: AppleMyungjo, "Courier New", Courier, monospace; }
+    </style>
+    <div class="ex-5"><script>fill()</script></div>
+</body>
+
+</html>
