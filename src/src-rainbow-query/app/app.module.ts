@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule  } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
 
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module'; 
@@ -13,10 +13,10 @@ import { PaletteItemComponent } from './palette-item.component';
     imports: [
         BrowserModule,
         HttpModule,
-        FormsModule,    // ngModel
+        FormsModule,
 
         CoreModule,
-        AppRoutingModule // 필요한가???
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,

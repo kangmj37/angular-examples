@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { PaletteItemComponent } from './palette-item.component';
+
 const routes: Routes = [
 ];
 
