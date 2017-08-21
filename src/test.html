@@ -3,17 +3,29 @@
 <head>
     <script>
     function fill() {
-        var ex_div_ele = document.currentScript.parentElement;
-		var style_ele = ex_div_ele.previousElementSibling;
-		var style = style_ele.sheet;
+		var ex_x_ele, style_ele, style;
+       	var str, selector, prop_str;
+		var new_ele;
 
-		var str = 'ABC 123 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 \\A God blessed the East Sea and Mt.';
-		var selector = '.' + ex_div_ele.className + '::after';
-		var propStr = 'content: \'' + str + '\';\nwhite-space: pre;\n';
-	
-		console.log(style_ele.innerText);
-		style.insertRule(selector + ' {' + propStr + '}', style.cssRules.length)
-    }
+		ex_x_ele = document.currentScript.parentElement;
+		style_ele = ex_x_ele.previousElementSibling;
+		style = style_ele.sheet;
+		
+		str = 'ABC 123 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 \\A God blessed the East Sea and Mt.';
+		selector = '.' + ex_x_ele.className + '::after';
+		propStr = 'content: \'' + str + '\';\nwhite-space: pre;\n';
+		
+		style.insertRule(selector + ' {' + propStr + '}', style.cssRules.length);
+		
+		new_ele = document.createElement("div");
+		new_ele.innerHTML = '<p>' + style_ele.innerText + '<\p>';
+		new_ele.setAttribute("class", "ex-1-sibling");
+		document.body.insertBefore(new_ele, ex_x_ele);
+		
+		selector = '.' + new_ele.className;
+		propStr = 'background-color: green;\n';
+		style.insertRule(selector + ' {' + propStr + '}', style.cssRules.length);
+	}
     </script>
 </head>
 
