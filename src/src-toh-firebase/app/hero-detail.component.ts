@@ -6,6 +6,8 @@ import { Location }               from '@angular/common';
 import { Hero }        from './hero';
 import { HeroService } from './hero.service';
 
+import { Observable } from "rxjs/Observable"
+
 @Component({
   selector: 'hero-detail',
   templateUrl: './hero-detail.component.html',
@@ -28,7 +30,7 @@ export class HeroDetailComponent implements OnInit {
 
   save(): void {
     this.heroService.update(this.hero)
-      .then(() => this.goBack());
+	  .then(() => this.goBack());
   }
 
   goBack(): void {
