@@ -24,18 +24,6 @@ System.config({
         }
       }
     },
-	"src-toh-firebase/app": {
-	  "defaultExtension": "js",
-	  "meta": {
-	    "./*.js": {
-	      "loader": "systemjs-angular-loader.js"
-	    }
-	  },
-	  "map": {
-	    "angularfire2/database": "npm:angularfire2@4.0.0-rc.2/bundles/database.umd.js",
-	    "angularfire2/ath": "npm:angularfire2@4.0.0-rc.2/bundles/auth.umd.js"
-	  }
-	},
     "src-top10/app": {
       "defaultExtension": "js",
       "meta": {
@@ -109,6 +97,30 @@ System.config({
       }
     },
     "src-firebase/app": {
+      "defaultExtension": "js",
+      "meta": {
+        "./*.js": {
+          "loader": "systemjs-angular-loader.js"
+        }
+      },
+      "map": {
+        "angularfire2/database": "npm:angularfire2@4.0.0-rc.2/bundles/database.umd.js",
+        "angularfire2/ath": "npm:angularfire2@4.0.0-rc.2/bundles/auth.umd.js"
+      }
+    },
+    "src-toh-firebase/app": {
+      "defaultExtension": "js",
+      "meta": {
+        "./*.js": {
+          "loader": "systemjs-angular-loader.js"
+        }
+      },
+      "map": {
+        "angularfire2/database": "npm:angularfire2@4.0.0-rc.2/bundles/database.umd.js",
+        "angularfire2/ath": "npm:angularfire2@4.0.0-rc.2/bundles/auth.umd.js"
+      }
+    },
+    "src-reversi/app": {
       "defaultExtension": "js",
       "meta": {
         "./*.js": {
