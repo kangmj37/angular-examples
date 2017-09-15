@@ -2,8 +2,8 @@
   {{title}}
 </h1>
 <div class="outer_plate">
-  <div *ngFor="let block of blocks, let i=index" class="inner_plate" id={{i}} (click)="onClik(i)">
-    <span class="stone stone_black"></span>
-    <span class="stone stone_white"></span>
+  <div *ngFor="let cell of cells, let i=index" class="inner_plate" (click)="onClick(i)">
+    <span *ngIf="cell.stat == 'black'" class="stone stone_black"></span>
+    <span *ngIf="cell.stat == 'white'" class="stone stone_white"></span>
   </div>
 </div> 
