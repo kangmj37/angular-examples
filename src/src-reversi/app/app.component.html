@@ -3,8 +3,8 @@
 </h1>
 <div *ngIf="!isReady">
   <input [value]="roomName">
-  <button value='Make room' (click)="makeRoom()"></button>
-  <button value='Join room' (click)="joinRoom()"></button>
+  <button (click)="makeRoom()">Make room</button>
+  <button (click)="joinRoom()">Join room</button>
 </div>
 <div class="outer_plate">
   <div *ngFor="let cell of cells, let i=index" class="inner_plate" (click)="onClick(i)">
