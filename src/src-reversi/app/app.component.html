@@ -1,6 +1,11 @@
 <h1>
-  {{title}} - {{order}}
+  {{title}} - {{roomName}}:{{order}}
 </h1>
+<div *ngIf="!isReady">
+  <input [value]="roomName">
+  <button value='Make room' (click)="makeRoom()"></button>
+  <button value='Join room' (click)="joinRoom()"></button>
+</div>
 <div class="outer_plate">
   <div *ngFor="let cell of cells, let i=index" class="inner_plate" (click)="onClick(i)">
     <span *ngIf="cell.stat == 'black'" class="stone stone_black"></span>
