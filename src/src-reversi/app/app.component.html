@@ -1,8 +1,11 @@
 <h1>
-  {{title}} - {{roomName}}:{{order}} Score - B: {{cntBlacks}} W: {{cntWhites}} 
+  {{title}}
 </h1>
-<div *ngIf="!isReady">
-  <input [value]="roomName">
+<h2>
+  Room: {{roomName}} Own: {{ownStone}} Order: {{order}} White: {{cntWhites}} Black: {{cntBlacks}}
+</h2>
+<div *ngIf="!isRoomObjReady && !isRoomObjHistoryReady">
+  <input [value]="roomName" (input)="roomName = $event.target.value">
   <button (click)="makeRoom()">Make room</button>
   <button (click)="joinRoom()">Join room</button>
 </div>

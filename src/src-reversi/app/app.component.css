@@ -34,8 +34,8 @@ h1 {
   height : -moz-calc(100% / var(--matrix-rows));
   height : calc(100% /var(--matrix-rows));
   */
-  width: 25%;
-  height: 25%;
+  width: 12.5%;
+  height: 12.5%;
   border: 1px solid black;
   background-color: #CFA444;
   position: relative;
