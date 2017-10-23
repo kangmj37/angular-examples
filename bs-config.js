@@ -31,5 +31,10 @@ module.exports = {
         verbose: false
       })
     }
+  },
+  ghostMode: {
+    clicks: false,
+    forms: false,
+    scroll: false
   }
 };

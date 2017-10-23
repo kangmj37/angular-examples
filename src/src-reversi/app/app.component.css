@@ -41,6 +41,12 @@ h1 {
   position: relative;
 }
 
+.stone_area {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: 1s;
+}
+
 .stone {
   display: inline-block;
   box-sizing: border-box;
@@ -53,6 +59,8 @@ h1 {
   top: 0;
   bottom: 0;
   margin: auto;
+
+  backface-visibility: hidden;
 }
 
 .stone_black {
@@ -61,4 +69,12 @@ h1 {
 
 .stone_white {
   background: radial-gradient(hsl(0, 0%, 100%),hsl(0, 0%, 75%) 75% );
+  
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
+
+.white {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}	
