@@ -22,4 +22,16 @@ export class AppComponent implements OnInit {
       { this.system = system; console.log(system); } 
     )
   }
+
+  Serialnum(): void {
+  }
+
+  applyClick_1(): void {
+  }
+  
+  applyClick_2(): void {
+  }
+  
+  applyClick_3(): void {
+  }
 }
