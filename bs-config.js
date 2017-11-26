@@ -18,6 +18,7 @@ module.exports = {
           { from: /\/toh-firebase.*/, to: '/toh-firebase.html' },
           { from: /\/toh.*/, to: '/toh.html' },
           { from: /\/binding.*/, to: '/binding.html' },
+          { from: /\/binding-kangmj37.*/, to: '/binding-kangmj37.html' },
           { from: /\/top10.*/, to: '/top10.html' },
           { from: /\/template-syntax.*/, to: '/template-syntax.html' },
           { from: /\/router.*/, to: '/router.html' },
