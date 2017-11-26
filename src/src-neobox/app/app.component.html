@@ -1,0 +1,177 @@
+<div id="page-div">
+	<div class="page-content">
+		<div class="row">
+			<div class="container_div">
+				<div class="content">
+					<div class="info">
+						<div clcass="title">
+							<label class="info_title">{{system.label.LAB_GEN_INFO}}</label>
+						</div>
+						<button class="btn_toolbar" *ngIf="system.perm" (click)="Serialnum()" type="button"><span class="set">{{system.label.SERI_NUM}}</span></button>
+					</div>
+					<div class="form_table">
+						<table>
+							<tbody>
+								<tr *ngIf="Msg_1">
+									<td class="ct">
+										<label class="rt">{{system.label.MSG_1}}</label>
+									</td>
+								</tr>
+								<tr *ngIf="Msg_2">
+									<td class="ct">
+										<label class="rt">{{system.label.MSG_2}}</label>
+									</td>
+								</tr>
+								<tr *ngIf="Msg_3">
+									<td class="ct">
+										<label class="rt">{{system.label.MSG_3}}</label>
+									</td>
+								</tr>
+								<tr *ngIf="Msg_4">
+									<td class="ct">
+										<label class="rt">{{system.label.MSG_4}}</label>
+									</td>
+								</tr>
+								<tr *ngIf="Msg_5">
+									<td class="ct">
+										<label class="rt">{{system.label.MSG_5}}</label>
+									</td>
+								</tr>
+								<tr *ngIf="Msg_6">
+									<td class="ct">
+										<label class="rt">{{system.label.MSG_6}}</label>
+									</td>
+								</tr>
+								<tr *ngIf="Msg_7">
+									<td class="ct">
+										<label class="rt">{{system.label.MSG_7}}</label>
+									</td>
+								</tr>
+								<tr>
+									<td class="ct">
+										<span class="bt">
+											<label>{{system.label.TAB_SERI_NUM}}</label>
+											<label class="ml_5">:</label>
+											<label class="ml_5">{{system.Serial}}</label>
+											<label class="ml_70">{{system.label.TAB_FIRM_VER}}</label>
+											<label class="ml_5">:</label>
+											<label class="ml_5">{{system.FirmVer}}</label>
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!--mac_info-->
+				<div class="content">
+					<div class="info">
+						<div class="title">
+							<label class="info_title">{{system.label.LAB_MAC_INFO}}</label>
+						</div>
+					</div>
+					<div class="data_table">
+						<table>
+							<thead>
+								<tr>
+									<th class="vw_50">
+										<label>
+											{{system.label.TAB_ETH_CARD}}
+										</label>
+									</th>
+									<th class="vw_50">
+										<label>
+											{{system.label.TAB_MAC_ADDR}}
+										</label>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- <tr *ngFor="mac_info in mac_infos" *ngIf="table"> -->
+								<tr *ngFor="let mac_info of system.mac_infos">
+									<td >
+										{{mac_info.eth}}
+									</td>
+									<td>
+										{{mac_info.mac}}
+									</td>
+								</tr>
+								<tr *ngIf="!system.table">
+									<td colspan="2">
+										<label>
+											{{system.label.NONE}}
+										</label>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="right-area" popup>
+	<div class="page_div">
+		<div class="page_content">
+			<div class="row">
+				<div class="container_div">
+					<!--serial number-->
+					<div class="content">
+						<div class="info">
+							<div class="title">
+								<label class="info_title">{{system.label.SERI_NUM}}</label>
+							</div>
+						</div>
+						<div class="form_table">
+							<table>
+								<tbody>
+									<tr *ngIf="system.root && system.serial_edit_enable">
+										<td class="td_title">
+											{{system.label.LAB_SERI_NUM}}
+										</td>
+										<td>
+											<!-- <input type="text" maxlength="64" class="input_200" ng-model="SerialNum"/> -->
+											<input type="text" maxlength="64" class="input_200" (click)="SerialNum()"/>
+											<button class="btn" (click)="applyClick_1()" type="button">{{system.label.SAVE}}</button>
+										</td>
+									</tr>
+									<tr>
+										<td class="td_title">
+											{{system.label.LAB_USER_ID}}
+										</td>
+										<td>
+											<!-- <input type="text" maxlength="64" class="input_200" ng-model="CustomID"/> -->
+											<input type="text" maxlength="64" class="input_200" (click)="CustomID()"/>
+											<button class="btn" (click)="applyClick_2()" type="button">{{system.label.SAVE}}</button>
+										</td>
+									</tr>
+									<tr>
+										<td class="td_title">
+											{{system.label.LAB_USER_DEFI_CODE}}
+										</td>
+										<td>
+											<!-- <input type="text" maxlength="32" class="input_200" ng-model="CustomCode"/> -->
+											<input type="text" maxlength="32" class="input_200" (click)="CustomCode()"/>
+											<button class="btn" (click)="applyClick_3()" type="button">{{system.label.SAVE}}</button>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="td_title">
+										</td>
+										<td>
+											<button class="btn" (click)="Cancel()" type="button">{{system.label.CANCEL}}</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

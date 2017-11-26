@@ -16,6 +16,14 @@ System.config({
         }
       }
     },
+    "src-neobox/app": {
+      "defaultExtension": "js",
+      "meta": {
+        "./*.js": {
+          "loader": "systemjs-angular-loader.js"
+        }
+      }
+    },
     "src-toh/app": {
       "defaultExtension": "js",
       "meta": {
