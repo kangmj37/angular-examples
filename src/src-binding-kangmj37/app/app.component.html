@@ -1,0 +1,6 @@
+<h1>{{title}}</h1>
+<div class="color" [style.backgroundColor]="backgroundColor"></div>
+<div *ngFor="let key of getColorKeys()">
+    <div><widget-display [value]="colors[key]"></widget-display></div>
+    <div><widget-stepper [value]="colors[key]" (colorChange)="onColorChange(key, $event)"></widget-stepper></div>
+</div>
