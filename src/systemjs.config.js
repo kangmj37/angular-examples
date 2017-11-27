@@ -40,6 +40,14 @@ System.config({
         }
       }
     },
+    "src-binding-kangmj37/app": {
+      "defaultExtension": "js",
+      "meta": {
+        "./*.js": {
+          "loader": "systemjs-angular-loader.js"
+        }
+      }
+    },
     "src-top10/app": {
       "defaultExtension": "js",
       "meta": {
