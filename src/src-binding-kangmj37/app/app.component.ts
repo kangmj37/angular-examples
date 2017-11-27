@@ -23,7 +23,6 @@ export class AppComponent implements OnInit {
     }
     
     getColorKeys(): string[] {
-        console.log(this.colors);
         return Object.keys(this.colors);
     }
 
